@@ -1,0 +1,14 @@
+module Seven_Segment_Knitter(
+output reg [6:0] HEX7,HEX6,HEX5,HEX4,HEX3,HEX2,HEX1,
+input wire [17:0] SW
+);
+    always @(*) begin
+      HEX7 = (SW[17] == 1) ? 7'b1001000 : 7'b1111111;
+		  HEX6 = (SW[16] == 1) ? 7'b1111001 : 7'b1111111;
+		  HEX5 = (SW[15] == 1) ? 7'b1000010 : 7'b1111111;
+		  HEX4 = (SW[14] == 1) ? 7'b1000010 : 7'b1111111;
+		  HEX3 = (SW[13] == 1) ? 7'b0000110 : 7'b1111111;
+		  HEX2 = (SW[12] == 1) ? 7'b0101111 : 7'b1111111;
+		  HEX1 = (SW[11] == 1) ? 7'b0010010 : 7'b1111111;
+    end
+endmodule
